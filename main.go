@@ -7,6 +7,7 @@ import (
 	"net/http"
 )
 
+//Imprime o conteúdo do arquivo na página web
 func handlerMeuCumprimento(w http.ResponseWriter, r *http.Request) {
 	nomeFile := "telainicio.html"
 	responseArquivo := lerArquivo(nomeFile)
@@ -14,6 +15,7 @@ func handlerMeuCumprimento(w http.ResponseWriter, r *http.Request) {
 
 }
 
+//Recebe o nome do arquivo com o path e retorna o conteúdo contido nele
 func lerArquivo(nomeFile string) []byte {
 	conteudoFile, err := ioutil.ReadFile(nomeFile)
 	if err != nil {
@@ -22,6 +24,7 @@ func lerArquivo(nomeFile string) []byte {
 	return conteudoFile
 }
 
+//Inicia o servidor no endereço localhost:5000
 func main() {
 	err := http.ListenAndServe(":5000", http.HandlerFunc(handlerMeuCumprimento))
 	if err != nil {
