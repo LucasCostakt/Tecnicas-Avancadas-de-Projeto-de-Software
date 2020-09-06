@@ -2,12 +2,14 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"log"
 	"net/http"
 )
 
 func handlerMeuCumprimento(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello World")
+	letter, _ := ioutil.ReadFile("hellomundo.html")
+	fmt.Fprintf(w, string(letter))
 }
 
 func main() {
