@@ -7,6 +7,7 @@ import (
 	"testing"
 )
 
+//Teste feito para função ReadFile()
 func TestRead(t *testing.T) {
 	myStructTestResponse := []struct {
 		name  string //Nome do teste
@@ -14,16 +15,17 @@ func TestRead(t *testing.T) {
 		want1 []byte //O que esperamos de retorno da função, conteúdo do arquivo. Retorna nulo se houver algum erro.
 		want2 error  //O tipo de erro caso ele exista se não existir tem que ser nulo nulo
 	}{
-		{
+		{ //Esse caso de teste verifica se a função leu corretamente o conteúdo do arquivo
 			name:  "Teste sucesso ao ler o arquivo",
 			send:  "C:/Users/lucas/Desktop/arquivo-de-teste.txt",
 			want1: []byte("Esse será só um teste para a disciplina de técnicas avançadas de projeto de software"),
 			want2: nil,
 		},
-		{
+		{ //Esse caso de teste verifica se o erro retornado está correto
 			name:  "Teste erro ao localizar o arquivo",
 			send:  "./arquivo-errado",
-			want1: nil, want2: errors.New("Arquivo não encontrado"),
+			want1: nil,
+			want2: errors.New("Arquivo não encontrado"),
 		},
 	}
 
@@ -36,6 +38,7 @@ func TestRead(t *testing.T) {
 	}
 }
 
+//Compara o que foi respondido pela função com o que é esperado
 func AssertResponsebody(t *testing.T, got, expectedResponse interface{}) {
 	t.Helper()
 	if !reflect.DeepEqual(got, expectedResponse) {
