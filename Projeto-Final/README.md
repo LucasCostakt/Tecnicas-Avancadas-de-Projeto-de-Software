@@ -6,7 +6,7 @@ Primeiramente farei as vantagens e desvantagens de cada uma das ferramentas e t�
 
 Pode acompanhar minha explicação no vídeo abaixo.
 
- [![Watch the video](https://n.i.uol.com.br/empregos/2013/01/09/homer-simpson-1357742046904_615x300.jpg)](https://www.youtube.com/watch?v=JeQuelXsUYA)
+ [![Watch the video](images/art.png)](https://drive.google.com/file/d/1GOP8RQikJ9Xbr27H1ygUlo4OHuu8fC-e/view?usp=sharing)
 
 
 ## Git
